@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">法考错题复盘系统学习闭环</title>
+  <desc id="desc">从错题输入到知识点诊断、用户确认、图谱标注和七日复测的流程图。</desc>
+  <rect width="1200" height="360" rx="28" fill="#102A43"/>
+  <path d="M48 62H1152M48 300H1152" stroke="#486581" stroke-width="1" opacity=".55"/>
+  <text x="64" y="82" fill="#B8D8D8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="18" font-weight="700" letter-spacing="3">LAW STUDY / WRONG QUESTION LOOP</text>
+  <text x="64" y="142" fill="#F0F4F8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="42" font-weight="800">法考错题复盘系统</text>
+  <text x="64" y="184" fill="#D9E2EC" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22">记录错误，更重要的是验证恢复。</text>
+  <text x="64" y="246" fill="#9FB3C8" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="17">INPUT  →  DIAGNOSE  →  CONFIRM  →  RETEST</text>
+  <g transform="translate(656 86)">
+    <path d="M82 92H132M218 92H268M354 92H404" stroke="#F6C85F" stroke-width="3" stroke-linecap="round"/>
+    <path d="M124 84L136 92L124 100M260 84L272 92L260 100M396 84L408 92L396 100" fill="none" stroke="#F6C85F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g>
+      <rect width="82" height="184" rx="16" fill="#183B56" stroke="#7CC4C4" stroke-width="2"/>
+      <circle cx="41" cy="40" r="15" fill="#7CC4C4"/>
+      <text x="41" y="98" text-anchor="middle" fill="#F0F4F8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="18" font-weight="700">错题</text>
+      <text x="41" y="124" text-anchor="middle" fill="#9FB3C8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="15">输入</text>
+    </g>
+    <g transform="translate(136)">
+      <rect width="82" height="184" rx="16" fill="#183B56" stroke="#F6C85F" stroke-width="2"/>
+      <circle cx="41" cy="40" r="15" fill="#F6C85F"/>
+      <text x="41" y="98" text-anchor="middle" fill="#F0F4F8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="18" font-weight="700">错因</text>
+      <text x="41" y="124" text-anchor="middle" fill="#9FB3C8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="15">诊断</text>
+    </g>
+    <g transform="translate(272)">
+      <rect width="82" height="184" rx="16" fill="#183B56" stroke="#FF9B71" stroke-width="2"/>
+      <circle cx="41" cy="40" r="15" fill="#FF9B71"/>
+      <text x="41" y="98" text-anchor="middle" fill="#F0F4F8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="18" font-weight="700">知识</text>
+      <text x="41" y="124" text-anchor="middle" fill="#9FB3C8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="15">确认</text>
+    </g>
+    <g transform="translate(408)">
+      <rect width="82" height="184" rx="16" fill="#183B56" stroke="#7CC4C4" stroke-width="2"/>
+      <circle cx="41" cy="40" r="15" fill="#7CC4C4"/>
+      <text x="41" y="98" text-anchor="middle" fill="#F0F4F8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="18" font-weight="700">七日</text>
+      <text x="41" y="124" text-anchor="middle" fill="#9FB3C8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="15">复测</text>
+    </g>
+  </g>
+  <text x="64" y="326" fill="#7CC4C4" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15">MARK THE GAP · TEST THE RECOVERY</text>
+</svg>
