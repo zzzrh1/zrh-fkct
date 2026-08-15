@@ -1,0 +1,6 @@
+.DS_Store
+*.pdf
+*.tmp
+*.log
+reports/graph-view*.html
+04-mistakes/marked-graphs/
