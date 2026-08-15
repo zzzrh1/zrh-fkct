@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "name": "商经知-公司法知识图谱样例",
+    "version": "0.1.0",
+    "source_file": null,
+    "source_scope": "Bundled fallback sample: 公司法框架",
+    "notes": "只抽取短知识点标签和关系，用于 agent 诊断与标红；不保存原 PDF 长文本。使用用户图谱时，以用户提供的 source_file 和 source_scope 为准。"
+  },
+  "nodes": [
+    {
+      "id": "commercial",
+      "name": "商经知",
+      "subject": "商经知",
+      "parents": [],
+      "confusables": [],
+      "keywords": ["商法", "经济法", "知识产权"]
+    },
+    {
+      "id": "commercial.company-law",
+      "name": "公司法",
+      "subject": "商经知",
+      "parents": ["commercial"],
+      "confusables": [],
+      "keywords": ["公司", "有限公司", "股份公司", "公司法"]
+    },
+    {
+      "id": "commercial.company-law.framework",
+      "name": "公司法框架",
+      "subject": "商经知",
+      "parents": ["commercial.company-law"],
+      "confusables": [],
+      "keywords": ["产生", "运行", "变更", "消亡"]
+    },
+    {
+      "id": "commercial.company-law.concept-feature",
+      "name": "公司的概念和特征",
+      "subject": "商经知",
+      "parents": ["commercial.company-law"],
+      "confusables": ["commercial.company-law.limited-liability-independent-liability"],
+      "keywords": ["公司概念", "公司特征", "营利性", "社团性", "独立法人"]
+    },
+    {
+      "id": "commercial.company-law.independent-property",
+      "name": "财产独立",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.concept-feature"],
+      "confusables": ["commercial.company-law.personality-denial"],
+      "keywords": ["独立财产", "法人财产", "出资财产转移"]
+    },
+    {
+      "id": "commercial.company-law.independent-name",
+      "name": "名义独立",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.concept-feature"],
+      "confusables": [],
+      "keywords": ["公司名称", "字号", "地域", "组织形式"]
+    },
+    {
+      "id": "commercial.company-law.independent-liability",
+      "name": "责任独立",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.concept-feature"],
+      "confusables": ["commercial.company-law.shareholder-limited-liability"],
+      "keywords": ["独立责任", "公司债务", "法人财产清偿"]
+    },
+    {
+      "id": "commercial.company-law.shareholder-limited-liability",
+      "name": "股东有限责任",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.concept-feature"],
+      "confusables": ["commercial.company-law.independent-liability", "commercial.company-law.personality-denial"],
+      "keywords": ["认缴出资额", "认购股份", "有限责任"]
+    },
+    {
+      "id": "commercial.company-law.limited-liability-independent-liability",
+      "name": "股东有限责任与公司独立责任",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.concept-feature"],
+      "confusables": ["commercial.company-law.personality-denial"],
+      "keywords": ["一体两面", "有限责任", "独立责任"]
+    },
+    {
+      "id": "commercial.company-law.personality-denial",
+      "name": "法人人格否认",
+      "subject": "商经知",
+      "parents": ["commercial.company-law"],
+      "confusables": ["commercial.company-law.shareholder-limited-liability", "commercial.company-law.independent-liability"],
+      "keywords": ["法人人格否认", "揭开公司面纱", "刺破公司面纱", "连带责任"]
+    },
+    {
+      "id": "commercial.company-law.vertical-personality-confusion",
+      "name": "纵向人格混同",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.personality-denial"],
+      "confusables": ["commercial.company-law.horizontal-personality-confusion"],
+      "keywords": ["股东与公司人格混同", "财产混同", "人员混同", "业务混同"]
+    },
+    {
+      "id": "commercial.company-law.significant-undercapitalization",
+      "name": "资本显著不足",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.personality-denial"],
+      "confusables": [],
+      "keywords": ["注册资本过少", "经营恶意", "资本不足"]
+    },
+    {
+      "id": "commercial.company-law.horizontal-personality-confusion",
+      "name": "横向人格混同",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.personality-denial"],
+      "confusables": ["commercial.company-law.vertical-personality-confusion", "commercial.company-law.reverse-personality-denial"],
+      "keywords": ["三角刺破", "多个公司混同", "实际控制"]
+    },
+    {
+      "id": "commercial.company-law.reverse-personality-denial",
+      "name": "反向法人人格否认",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.personality-denial"],
+      "confusables": ["commercial.company-law.horizontal-personality-confusion"],
+      "keywords": ["反向人格否认", "股东债权人", "控制股东债务"]
+    },
+    {
+      "id": "commercial.company-law.personality-denial-burden",
+      "name": "法人人格否认的举证责任",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.personality-denial"],
+      "confusables": [],
+      "keywords": ["谁主张谁举证", "举证责任倒置", "一人公司"]
+    },
+    {
+      "id": "commercial.company-law.personality-denial-parties",
+      "name": "法人人格否认的诉讼当事人",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.personality-denial"],
+      "confusables": [],
+      "keywords": ["原告", "被告", "共同被告", "无独三"]
+    },
+    {
+      "id": "commercial.company-law.financial-accounting",
+      "name": "财务会计制度",
+      "subject": "商经知",
+      "parents": ["commercial.company-law"],
+      "confusables": [],
+      "keywords": ["财务会计", "财务会计报告", "公积金", "利润分配"]
+    },
+    {
+      "id": "commercial.company-law.reserve-fund",
+      "name": "公积金",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.financial-accounting"],
+      "confusables": ["commercial.company-law.profit-distribution"],
+      "keywords": ["法定公积金", "任意公积金", "资本公积金", "转增资本", "弥补亏损"]
+    },
+    {
+      "id": "commercial.company-law.profit-distribution",
+      "name": "股东利润分配请求权",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.financial-accounting"],
+      "confusables": ["commercial.company-law.reserve-fund"],
+      "keywords": ["分红权", "利润分配", "实缴出资比例", "持股比例"]
+    },
+    {
+      "id": "commercial.company-law.establishment",
+      "name": "公司设立",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.framework"],
+      "confusables": [],
+      "keywords": ["发起人", "设立", "登记", "公示"]
+    },
+    {
+      "id": "commercial.company-law.governance",
+      "name": "公司治理机构",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.framework"],
+      "confusables": ["commercial.company-law.shareholder-rights-litigation"],
+      "keywords": ["股东会", "董事会", "监事会", "治理机构"]
+    },
+    {
+      "id": "commercial.company-law.shareholder-rights-litigation",
+      "name": "股东权利行使及股东诉讼",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.framework"],
+      "confusables": ["commercial.company-law.governance"],
+      "keywords": ["股东权利", "股东诉讼", "知情权", "代表诉讼"]
+    },
+    {
+      "id": "commercial.company-law.equity-transfer",
+      "name": "股权/股份流转",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.framework"],
+      "confusables": ["commercial.company-law.capital-increase-decrease"],
+      "keywords": ["股权转让", "股份转让", "股权流转"]
+    },
+    {
+      "id": "commercial.company-law.capital-increase-decrease",
+      "name": "增资、减资",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.framework"],
+      "confusables": ["commercial.company-law.equity-transfer", "commercial.company-law.reserve-fund"],
+      "keywords": ["增资", "减资", "注册资本"]
+    },
+    {
+      "id": "commercial.company-law.liquidation",
+      "name": "清算",
+      "subject": "商经知",
+      "parents": ["commercial.company-law.framework"],
+      "confusables": [],
+      "keywords": ["解散", "清算", "注销"]
+    }
+  ]
+}
