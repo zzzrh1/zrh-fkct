@@ -1,0 +1,150 @@
+name: zrh-fkct
+version: 0.2.0
+mode: scaffold
+owner: user_or_integrator
+input_files:
+  - optional: local_config.yaml
+  - optional: uploaded_wrong_question_images
+  - references/knowledge-graph-commercial-company-law.json
+  - optional: external_knowledge_graph.json
+  - optional: user_xmind_mind_map.xmind
+  - optional: question_bank.json
+  - optional: daily_wrong_questions.md
+inputs:
+  input_rule:
+    type: string
+    required: true
+    description: Provide either uploaded_images or wrong_questions. Both are allowed when OCR/text has already been extracted.
+  uploaded_images:
+    type: array
+    required: false
+    description: Image files or paths supplied by the user. The agent should inspect them directly when vision is available.
+  subject:
+    type: string
+    required: false
+    examples: ["民法", "刑法", "民诉"]
+  wrong_questions:
+    type: array
+    required: false
+    item_fields:
+      image_path: string
+      ocr_text: string
+      stem: string
+      options: array
+      user_answer: string
+      correct_answer: string
+      explanation: string
+      explanation_items: array
+      selected_explanation_indexes: array
+      selected_explanations: array
+      time_spent_seconds: number
+      manual_knowledge_tags: array
+      selected_knowledge_points: array
+      upper_concept_points: array
+      parent_points: array
+      surface_points: array
+      root_cause_points: array
+      user_notes: string
+      primary_cause: string
+      user_confirmed: boolean
+  knowledge_graph:
+    type: object
+    required: false
+    description: Nodes, parent links, adjacent/confusable links, and optional heat scores.
+  xmind_file:
+    type: string
+    required: false
+    description: User-supplied mind map for marking. Must be an XMind file ending in .xmind; other mind-map formats are not accepted by the XMind marking workflow.
+  question_bank:
+    type: object
+    required: false
+    description: Trusted question metadata. If absent, skill must not claim exact question matching.
+  review_vault:
+    type: string
+    required: false
+    description: Folder that stores daily reviews, mistake index, maps, and classified mistakes.
+  paths:
+    type: object
+    required: false
+    description: Runtime paths selected for this user and run; never use package-specific absolute paths.
+    fields:
+      review_vault: string
+      technical_workspace: string
+      source_materials: string
+      graph_file: string
+      question_bank: string
+      backup_dir: string
+      target_vault: string
+      skill_config: string
+  review_mode:
+    type: string
+    required: false
+    enum: ["none", "daily", "seven_day_retest", "full"]
+    default: "none"
+  weekly_review:
+    type: object
+    required: false
+    description: Weekly review trigger selected during first-time Vault configuration.
+    fields:
+      method: string
+      technical_workspace: string
+      launchd_installed: boolean
+  import_mode:
+    type: string
+    required: false
+    enum: ["preview", "write_review_vault"]
+    default: "preview"
+    description: Use write_review_vault only after structured cards are ready and the user wants durable files.
+outputs:
+  mistake_cards:
+    type: array
+    description: Structured wrong-question cards with cause diagnosis and knowledge mapping.
+  cause_composition:
+    type: object
+    description: Percent distribution of wrong causes.
+  graph_updates:
+    type: array
+    description: Node color and weakness-score updates with reasons.
+  recommendations:
+    type: array
+    description: Root-cause, surface-point, and adjacent-point practice ratios.
+  learning_document:
+    type: markdown
+    required: false
+  study_log_delta:
+    type: markdown
+    required: false
+  review_index_delta:
+    type: object
+    required: false
+    description: Updates to counted/uncounted mistakes, retest queue, subject/unit map stats, and cause categories.
+  metrics_dashboard:
+    type: markdown
+    required: false
+    description: Dashboard generated from durable review records.
+  weekly_review_files:
+    type: array
+    required: false
+    description: Current and previous ISO-week Markdown files generated from the mistake index and retest queue.
+  implementation_status:
+    type: markdown
+    required: false
+    description: Product-document feature coverage and remaining manual/data-dependent gaps.
+constraints:
+  - If vision is available, use the image directly before asking the user to OCR it.
+  - If vision is not available or image quality is insufficient, ask for OCR text or manual fields.
+  - Do not fabricate question-bank matches.
+  - Do not treat low-confidence AI diagnosis as fact.
+  - Do not expose or request API secrets.
+  - Keep outputs usable even when OCR fails by switching to manual tags.
+  - Accept a user-supplied mind map for the marking workflow only when it is an XMind .xmind file; do not treat OPML, PDF, or image files as XMind input.
+  - On first use, ask for an Obsidian Vault and persist the selected weekly review method in 00-index/skill-config.json.
+  - Present launchd only on macOS; never require or install an OS-specific scheduler for other users.
+  - Preserve manual content outside AUTO-GENERATED weekly review markers.
+  - Keep daily review records separate from the base knowledge graph.
+  - Count a mistake once in the index, even if it appears in multiple folders or views.
+  - Do not ask the user to select explanations; preserve recognized explanations exactly and write them with the wrong-question card by default.
+  - Do not write durable mistake records until the user confirms knowledge points and chooses one cause tag.
+  - Do not ask whether to ingest; confirmation of knowledge points and cause implies ingestion.
+  - If a confirmed knowledge point is too fine-grained for the subject map, keep the exact wording in the wrong-question card and mark the nearest upper concept in the separate marked-graph output.
+  - Normalize the user typo "大衣" to "大意".
