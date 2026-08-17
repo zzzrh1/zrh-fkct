@@ -8,8 +8,6 @@
 > 🛰️：`ZRHuai-`  
 > 欢迎大家关注；以后会持续更新AI法律应用和skill。
 
-<p align="center"><strong>领域：法律学习　·　流程：分析到复测　·　格式：Markdown | JSON | XMind</strong></p>
-
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="法考错题复盘系统从错题输入、错因诊断、知识确认到七日复测的学习闭环">
 </p>
