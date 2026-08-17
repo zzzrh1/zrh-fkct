@@ -8,15 +8,7 @@
 > 🛰️：`ZRHuai-`  
 > 欢迎大家关注；以后会持续更新AI法律应用和skill。
 
-<p align="center">
-  <img src="https://img.shields.io/badge/领域-法律学习-183B56?style=flat-square" alt="法律学习">
-  <img src="https://img.shields.io/badge/流程-分析到复测-2E7D6B?style=flat-square" alt="分析到复测">
-  <img src="https://img.shields.io/badge/格式-Markdown%20%7C%20JSON%20%7C%20XMind-CB8B2E?style=flat-square" alt="Markdown JSON XMind">
-</p>
-
-<p align="center">
-  <img src="./assets/readme/review-loop.svg" width="100%" alt="法考错题复盘从输入、诊断、确认到复测和复盘的学习闭环">
-</p>
+<p align="center"><strong>领域：法律学习　·　流程：分析到复测　·　格式：Markdown | JSON | XMind</strong></p>
 
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="法考错题复盘系统从错题输入、错因诊断、知识确认到七日复测的学习闭环">
